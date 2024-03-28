@@ -1,6 +1,6 @@
 # devcontainer
 
-**Der devcontainer ist für die Nutzung unter Ubuntu und VisualStudio Code optimiert und installiert direkt empfohlene Extensions für Code.**
+**Der devcontainer ist für die Entwicklung von Python unter Ubuntu und VisualStudio Code optimiert und installiert direkt empfohlene Extensions für Code.**
 
 Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu Verfügung gestellt. Die Pakete die zur Entwicklung notwendig sind, werden in den jeweiligen Listen gepflegt (siehe unten).
 
