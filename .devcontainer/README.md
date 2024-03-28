@@ -1,49 +1,29 @@
 # devcontainer
 
+**Der devcontainer ist für die Nutzung unter Ubuntu und VisualStudio Code optimiert und installiert direkt empfohlene Extensions für Code.**
+
 Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu Verfügung gestellt. Die Pakete die zur Entwicklung notwendig sind, werden in den jeweiligen Listen gepflegt (siehe unten).
 
-## tl;dr
+## Abhängikeiten
+Notwendige Abhängigkeiten des Systems sind Node.js, npm und devcontainer-cli.
 
-Die Entwicklungsumgebung ist vollständig containerisiert. (Das Skript muss einen Ordner unter .devcontainer ausgeführt werden):
+## nur devcontainer 
 
-`.\setup_env.ps1 -dependencies $false -name "NAME"`
+Folgendermassen erstelle / baue ich einen devcontainer 
+- Konsolenfenster in dem Ordner öffnen, in dem sich der Ordner .devcontainer befindet: Mit dem Befehl `devcontainer up --workspace-folder .`
+- Konsolenfenster beliebig `devcontainer up --workspace-folder <pfad_zum_.devcontainer>`
 
-Wenn die Parameter nicht mit angegeben werden, wird der default Wert benutzt:
-
-Param | Funktion | Type | Default
---- | --- | --- | ---
-dependencies | Installation Systemabhängigkeiten | Boolean | false
-name | Name des WSL | String | kraftwerk
-
-Mit der Ausführung wird ein Container mittels `devcontainer` erstellt und anschliessend in ein Subsystem konvertiert. Darin sind Dev Sachen enthalten, wie apt und pip packages und kleine Konfigurationen des Containers / Subsystems für einen entspannten Umgang.
-Die dependencies Flag installiert notwendige Abhängigkeiten des Systems, das sind Node.js, npm und devcontainer-cli.
-
-## Zusätzliche Infos
+## Zusätzliche Infos - Pakete
 
 Es werden Systempackages (per apt-get) installiert, diese sind in einem devcontainer-feature umgesetzt. Zum Hinzufügen / Entfernen die Liste in dem Skript `.devcontainer/local-features/features/install.sh` anpassen.
 Softwarepakete über pip werden im Erstellungsprozess am Ende der Kreation des Containers installiert. Für Anpassungen die Liste `.devcontainer/requirements.txt` bearbeiten.
 Änderungen werden erst beim Neubauen wirksam.
 
 ### Rebuilden
-Die Pakete können im WSL wie gewohnt erweitert werden. Falls das WSL neu erstellt werden soll: WSL und Container von vorherigen Aufsetzen mit dem Skript setup_env.ps1 **MÜSSEN** entfernt werden! Anonsten kommt es zu Konflikten...
+Die übersichtlichste Verwaltung von (mehreren) devcontainer kann über VS Code selber durchgeführt werden. Ist ziemlich intuitiv.
 
 ### Hilfreiche Code Sachen
 
 #### devcontainer.json
-
-"remoteEnv": {
-    // uncomment to pass your github token to container
-    //"GH_TOKEN":"${localEnv:GH_TOKEN}"
-},
-
 -> features:
-//"ghcr.io/devcontainers/features/common-utils:2": {}
 //"ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {}
-
-#### setup_env.ps1
-
-Delete recently created container
-- docker rm $(docker ps -a -q --filter "label=temp_container")
-
-to set wsl $name as default
-- wsl -s $name
