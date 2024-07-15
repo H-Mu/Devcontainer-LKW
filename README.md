@@ -27,3 +27,22 @@ Die übersichtlichste Verwaltung von (mehreren) devcontainer kann über VS Code 
 #### devcontainer.json
 -> features:
 //"ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {}
+
+### Limitations
+**Zwei Container Instanzen**
+Falls der Container mit dieser devcontainer.json Kofiguration bereits existiert, kann kein zweiter Container erstellt werden. Die Ports vom VNC sind "belegt". Porblem kann umgangen werden, indem nur ein Container gleichzeitig existiert ODER falls mehrere Container gewünscht sind / gebraucht werden MÜSSEN in der devcontainer.json ALLE Ports abgeändert werden. Kann im Nachhinein in VS Code selber auch konfiguriert werden.
+
+Diese Zeilen geben alle Ports an und müssen konsistent z.B. um eins erhöht werden. 
+`  "appPort": [
+		// 2222 Expose SSH port for tools that need it (e.g. JetBrains)
+        // 6080, 5901 für desktop-lite 
+		"127.0.0.1:2222:2222", "127.0.0.1:6080:6080", "127.0.0.1:5901:5901"
+	],
+  "portsAttributes": {
+    "6080": {
+      "label": "desktop"
+    },
+    "5901": {
+      "label": "vnc"
+    }
+  },`
