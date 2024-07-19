@@ -28,6 +28,11 @@ Die übersichtlichste Verwaltung von (mehreren) devcontainer kann über VS Code 
 -> features:
 //"ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {}
 
+-> für GPU Support im Container
+  `"runArgs": [
+    "--gpus","all"
+  ],`
+  
 ### Limitations
 **Zwei Container Instanzen**
 Falls der Container mit dieser devcontainer.json Kofiguration bereits existiert, kann kein zweiter Container erstellt werden. Die Ports vom VNC sind "belegt". Porblem kann umgangen werden, indem nur ein Container gleichzeitig existiert ODER falls mehrere Container gewünscht sind / gebraucht werden MÜSSEN in der devcontainer.json ALLE Ports abgeändert werden. Kann im Nachhinein in VS Code selber auch konfiguriert werden.
