@@ -13,6 +13,9 @@
     "ghcr.io/devcontainers/features/github-cli:1": {},
 	"./local-features/devtools": {}
   },
+  "runArgs": [
+	  "--gpus","all"
+  	],
   "appPort": [
 		// 2222 Expose SSH port for tools that need it (e.g. JetBrains)
         // 6080, 5901 für desktop-lite 
