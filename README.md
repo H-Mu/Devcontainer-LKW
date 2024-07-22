@@ -4,6 +4,8 @@
 
 Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu Verfügung gestellt. Die Pakete die zur Entwicklung notwendig sind, werden in den jeweiligen Listen gepflegt (siehe unten).
 
+**Nun mit GPU Support IM Container mit Torch!**
+
 ## Abhängikeiten
 Notwendige Abhängigkeiten des Systems sind Node.js, npm und devcontainer-cli.
 
