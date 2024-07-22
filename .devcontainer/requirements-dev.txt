@@ -13,6 +13,20 @@ langchain-openai~=0.1.7
 # Pseudo-Annonymization
 spacy~=3.7.4
 
+# metrics
+evaluate~=0.4.1
+transformers~=4.41.1
+rouge_score~=0.1.2
+rouge~=1.0.1
+bleu~=0.3
+sacrebleu~=2.4.2
+
+# evaluation
+torch==2.2.1 
+transformers 
+optimum 
+auto-gptq[no-build-isolation]
+
 # dev
 #fastapi~=0.109.0
 jellyfish~=1.0.3
