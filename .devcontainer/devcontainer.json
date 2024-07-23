@@ -35,10 +35,11 @@
   "customizations": {
     "vscode": {
       "extensions": [	"ms-python.python",
-            			"ms-python.debugpy",
-            			"ms-python.pylint",
-            			"ms-python.black-formatter",
-            			"yzhang.markdown-all-in-one"
+            		"ms-python.debugpy",
+	      		"kaih2o.python-resource-monitor",
+            		"ms-python.pylint",
+            		"ms-python.black-formatter",
+            		"yzhang.markdown-all-in-one"
       ]
       }
     },
