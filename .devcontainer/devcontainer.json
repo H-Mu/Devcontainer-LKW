@@ -37,6 +37,7 @@
       "extensions": [	"ms-python.python",
             		"ms-python.debugpy",
 	      		"kaih2o.python-resource-monitor",
+	      		"mutantdino.resourcemonitor",
             		"ms-python.pylint",
             		"ms-python.black-formatter",
             		"yzhang.markdown-all-in-one"
