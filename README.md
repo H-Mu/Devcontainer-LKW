@@ -4,7 +4,8 @@
 
 Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu Verfügung gestellt. Die Pakete die zur Entwicklung notwendig sind, werden in den jeweiligen Listen gepflegt (siehe unten).
 
-**Nun mit GPU Support IM Container mit Torch!** \n
+**Nun mit GPU Support IM Container mit Torch!**
+
 **Nun mit GUI Support: Direkter Zugriff aus dem Container heraus auf das HostSystem Display**
 
 ## Abhängikeiten
