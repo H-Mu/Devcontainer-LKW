@@ -14,7 +14,7 @@
 	"./local-features/devtools": {}
   },
   "runArgs": [
-			"-e DISPLAY=${localEnv:DISPLAY}",
+			"--env", "DISPLAY=${localEnv:DISPLAY}",
 			"--network=host",
 			"--gpus=all"
   	],
@@ -24,14 +24,14 @@
   "appPort": [
 		// 2222 Expose SSH port for tools that need it (e.g. JetBrains)
         // 6080, 5901 für desktop-lite 
-        // +4
-		"127.0.0.1:2226:2226", "127.0.0.1:6084:6084", "127.0.0.1:5905:5905"
+        // +5
+		"127.0.0.1:2227:2227", "127.0.0.1:6085:6085", "127.0.0.1:5906:5906"
 	],
   "portsAttributes": {
-    "6084": {
+    "6085": {
       "label": "desktop"
     },
-    "5905": {
+    "5906": {
       "label": "vnc"
     }
   },
