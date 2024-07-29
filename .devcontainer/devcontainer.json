@@ -14,18 +14,24 @@
 	"./local-features/devtools": {}
   },
   "runArgs": [
-	  "--gpus","all"
+			"-e DISPLAY=${localEnv:DISPLAY}",
+			"--network=host",
+			"--gpus=all"
   	],
+  	"mounts": [
+  		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+	]
   "appPort": [
 		// 2222 Expose SSH port for tools that need it (e.g. JetBrains)
         // 6080, 5901 für desktop-lite 
-		"127.0.0.1:2222:2222", "127.0.0.1:6080:6080", "127.0.0.1:5901:5901"
+        // +4
+		"127.0.0.1:2226:2226", "127.0.0.1:6084:6084", "127.0.0.1:5905:5905"
 	],
   "portsAttributes": {
-    "6080": {
+    "6084": {
       "label": "desktop"
     },
-    "5901": {
+    "5905": {
       "label": "vnc"
     }
   },
@@ -35,14 +41,13 @@
   "customizations": {
     "vscode": {
       "extensions": [	"ms-python.python",
-            		"ms-python.debugpy",
-	      		"kaih2o.python-resource-monitor",
-	      		"mutantdino.resourcemonitor",
-            		"ms-python.pylint",
-            		"ms-python.black-formatter",
-            		"yzhang.markdown-all-in-one"
+            			"ms-python.debugpy",
+            			"ms-python.pylint",
+            			"ms-python.black-formatter",
+            			"yzhang.markdown-all-in-one"
       ]
       }
     },
   	"updateContentCommand": "pip install --no-cache-dir -r .devcontainer/requirements-dev.txt"
+  	
 }
