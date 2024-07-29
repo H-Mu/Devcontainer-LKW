@@ -29,9 +29,11 @@ apt-get upgrade -y
 
 # Authenticate to X-Server - show GUI from container on $DISPLAY
 # Uncomment to authenticate explicit user vscode
+echo "Start X-Server auhtorization..."
 echo -n "xauth add `xauth list :${DISPLAY#*:}`" #| sudo su - vscode
+echo "Successful auhtorization."
 #sudo su - vscode
-echo -n "xauth remove :${DISPLAY#*:}" #| sudo su - vscode
+#echo -n "xauth remove :${DISPLAY#*:}" #| sudo su - vscode
 
 
 # Lösche und setze Passwort für die SSH Verbidnung
