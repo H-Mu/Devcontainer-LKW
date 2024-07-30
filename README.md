@@ -22,7 +22,7 @@ npm --version
 npm install -g @devcontainers/cli
 ```
 
-### Update npm Packages
+### (optional) Update npm Packages
 ```
 # Check for outdated packages
 npm outdated
