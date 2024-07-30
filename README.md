@@ -9,8 +9,9 @@ Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu
 **Nun mit GUI Support: Direkter Zugriff aus dem Container heraus auf das HostSystem Display**
 
 ## Abhängikeiten
-Notwendige Abhängigkeiten des Systems sind Node.js (Empfohlen wird der Node Version Manager nvm), npm und devcontainer-cli:
+Notwendige Abhängigkeiten des Systems sind Node.js (Empfohlen wird der Node Version Manager nvm), npm und devcontainer-cli.
 
+### Installation 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.bashrc
@@ -19,6 +20,16 @@ npm install -g npm@latest
 node --version
 npm --version
 npm install -g @devcontainers/cli
+```
+
+### Update npm Packages
+```
+# Check for outdated packages
+npm outdated
+# Update npm
+sudo npm install -g npm
+# Update all globally installed packages
+sudo npm update -g
 ```
 
 ## nur devcontainer 
