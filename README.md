@@ -9,7 +9,7 @@ Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu
 **Nun mit GUI Support: Direkter Zugriff aus dem Container heraus auf das HostSystem Display**
 
 ## Abhängikeiten
-Notwendige Abhängigkeiten des Systems sind Node.js (Empfohlen wird der Node Version Manager nvm), npm und devcontainer-cli.
+Notwendige Abhängigkeiten des Systems sind Node.js, npm und devcontainer-cli (Empfohlen wird der Node Version Manager nvm).
 
 ### Installation 
 ```
