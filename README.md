@@ -1,6 +1,6 @@
 # devcontainer
 
-**Der devcontainer ist für die Entwicklung von Python unter Ubuntu und VisualStudio Code optimiert und installiert direkt empfohlene Extensions für Code.**
+**Der devcontainer ist für die Entwicklung von Python unter Ubuntu und VisualStudio Code optimiert und installiert direkt empfohlene Extensions für VS Code.**
 
 Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu Verfügung gestellt. Die Pakete die zur Entwicklung notwendig sind, werden in den jeweiligen Listen gepflegt (siehe unten).
 
@@ -9,7 +9,17 @@ Für die einfache und konsistente Entwicklung wird eine einheitliche Umgebung zu
 **Nun mit GUI Support: Direkter Zugriff aus dem Container heraus auf das HostSystem Display**
 
 ## Abhängikeiten
-Notwendige Abhängigkeiten des Systems sind Node.js, npm und devcontainer-cli.
+Notwendige Abhängigkeiten des Systems sind Node.js (Empfohlen wird der Node Version Manager nvm), npm und devcontainer-cli:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+source ~/.bashrc
+nvm install --lts && nvm use --lts
+npm install -g npm@latest 
+node --version
+npm --version
+npm install -g @devcontainers/cli
+```
 
 ## nur devcontainer 
 
