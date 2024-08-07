@@ -3,27 +3,42 @@
   "name": "Linguistik-Kraftwerk DevContainer",
   "image": "mcr.microsoft.com/devcontainers/python:3.10-bookworm",
   "features": {
+<<<<<<< HEAD
+=======
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "username": "vscode"
+    },
+>>>>>>> 47ce429aee1073b861aa0855455743c4a67dff26
     "ghcr.io/devcontainers/features/desktop-lite:1": {},
     "ghcr.io/devcontainers/features/sshd:1": {
-			"START_SSHD": "true",
+      "START_SSHD": "true",
       "NEW_PASSWORD": "qwertz."
-		},
+    },
     "ghcr.io/devcontainers/features/github-cli:1": {},
-	"./local-features/devtools": {}
+    "./local-features/devtools": {}
   },
+  "runArgs": [
+    "--env", "DISPLAY=${localEnv:DISPLAY}",
+    "--network=host",
+    "--gpus=all"
+  ],
+  "mounts": [
+    "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+  ],
   "appPort": [
-		// 2222 Expose SSH port for tools that need it (e.g. JetBrains)
-        // 6080, 5901 für desktop-lite 
-		"127.0.0.1:2222:2222", "127.0.0.1:6080:6080", "127.0.0.1:5901:5901"
-	],
+    "127.0.0.1:2229:2229",
+    "127.0.0.1:6087:6087",
+    "127.0.0.1:5908:5908"
+  ],
   "portsAttributes": {
-    "6080": {
+    "6087": {
       "label": "desktop"
     },
-    "5901": {
+    "5908": {
       "label": "vnc"
     }
   },
+<<<<<<< HEAD
   // Extensions werden in Container installiert, aber nicht in WSL mit übernommen...
   "customizations": {
     "vscode": {
@@ -31,4 +46,21 @@
       }
     },
   	"updateContentCommand": "pip install --no-cache-dir -r .devcontainer/requirements.txt"
+=======
+  "remoteEnv": {
+    "GH_TOKEN": "${localEnv:GH_TOKEN}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-python.pylint",
+        "ms-python.black-formatter",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+  "updateContentCommand": "pip install --no-cache-dir -r .devcontainer/requirements-dev.txt && pip install --no-cache-dir --no-build-isolation -r .devcontainer/requirements-dev-special.txt"
+>>>>>>> 47ce429aee1073b861aa0855455743c4a67dff26
 }

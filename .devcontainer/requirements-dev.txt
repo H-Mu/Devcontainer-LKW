@@ -1,0 +1,47 @@
+numpy~=1.22.4
+pillow~=9.1.0
+google-cloud-speech~=2.22.0
+soundfile~=0.10.3
+pyaudio~=0.2.14
+openai~=1.30.3
+sounddevice~=0.4.6
+cryptography~=42.0.2
+langchain-core~=0.2.1
+langchain-community~=0.2.1
+langchain-openai~=0.1.7
+
+# Pseudo-Annonymization
+spacy~=3.7.4
+
+# metrics
+evaluate~=0.4.1
+transformers~=4.41.1
+rouge_score~=0.1.2
+rouge~=1.0.1
+bleu~=0.3
+sacrebleu~=2.4.2
+
+# evaluation
+torch==2.2.1 
+transformers 
+optimum 
+
+# dev
+#fastapi~=0.109.0
+jellyfish~=1.0.3
+fastapi[all]
+uvicorn~=0.25.0 
+pydantic~=2.5.3
+pydantic-settings~=2.2.1
+pytest~=7.4.4
+python-multipart~=0.0.9
+PyJWT~=2.8.0
+
+# nur für CompareWizard
+jiwer~=3.0.4
+mplcursors~=0.5.3
+nltk~=3.8.1
+natsort~=8.4.0
+matplotlib~=3.8.4
+tksheet~=7.2.1
+scikit-learn~=1.5.0
