@@ -48,5 +48,5 @@
       ]
     }
   },
-  "updateContentCommand": "pip install --no-cache-dir -r .devcontainer/requirements-dev.txt && pip install --no-cache-dir --no-build-isolation -r .devcontainer/requirements-dev-special.txt"
+  "updateContentCommand": "pip install --no-cache-dir -r .devcontainer/requirements-dev.txt && pip install --no-cache-dir --no-build-isolation -r .devcontainer/requirements-dev-special.txt && python -m spacy download de_core_news_lg"
 }
